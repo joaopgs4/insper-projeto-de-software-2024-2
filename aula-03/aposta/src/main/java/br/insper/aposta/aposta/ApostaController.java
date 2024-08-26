@@ -17,6 +17,16 @@ public class ApostaController {
         return apostaService.listar();
     }
 
+    @GetMapping("/{IdAposta}")
+    public String getAposta(@PathVariable String IdAposta) {
+        return apostaService.verificaAposta(IdAposta);
+    }
+
+    @GetMapping("/status/{status}")
+    public List<Aposta> getByStatus(@PathVariable String status) {
+        return apostaService.achaAposta(status);
+    }
+
     @PostMapping
     public void salvar(@RequestBody Aposta aposta) {
         apostaService.salvar(aposta);

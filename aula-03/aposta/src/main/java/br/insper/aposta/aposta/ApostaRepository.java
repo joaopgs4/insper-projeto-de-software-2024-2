@@ -9,4 +9,6 @@ import java.util.List;
 public interface ApostaRepository extends MongoRepository<Aposta, String> {
 
     List<Aposta> findByResultado(String resultado);
+    List<Aposta> findByStatus(String status);
+
 }
