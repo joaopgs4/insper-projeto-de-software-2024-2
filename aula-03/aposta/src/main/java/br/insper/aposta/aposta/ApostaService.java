@@ -41,7 +41,7 @@ public class ApostaService {
                 "http://localhost:8080/partida/" + aposta.getIdPartida(),
                 RetornarPartidaDTO.class);
 
-                if (partida.getBody().getStatus() == "FINALIZADA") {
+                if (partida.getBody().getStatus().equals("FINALIZADA")) {
                     if (partida.getBody().getPlacarMandante() > partida.getBody().getPlacarVisitante()) {
                         if (aposta.getResultado() == "VITORIA_MANDANTE"){aposta.setStatus("GANHOU");}
                         if (aposta.getResultado() == "VITORIA_VISITANTE"){aposta.setStatus("PERDEU");}
