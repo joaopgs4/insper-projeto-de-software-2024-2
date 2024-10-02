@@ -1,12 +1,10 @@
 package br.insper.tabela.tabela;
 
 import br.insper.tabela.partida.PartidaService;
-import br.insper.tabela.partida.RetornarPartidaDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Service
 public class TabelaService {
@@ -19,6 +17,8 @@ public class TabelaService {
 
     public List<TabelaDTO> getTabela() {
 
+        return null;
+        /*
         List<RetornarPartidaDTO> partidas = partidaService.getPartidas();
 
         Map<String, TabelaDTO> tabela = new HashMap<>();
@@ -43,6 +43,9 @@ public class TabelaService {
         return new ArrayList<>(tabela.values()).stream()
                 .sorted(Comparator.comparing(TabelaDTO::getPontos).reversed())
                 .collect(Collectors.toList());
+
+         */
+
     }
 
     private void processarTime(Map<String, TabelaDTO> tabela, String time, int golsPro, int golsContra) {
